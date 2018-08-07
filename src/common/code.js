@@ -1,0 +1,5 @@
+const SUCCESS = ['S0000', 'S0001']
+const ABNORMAL = ['A0000']
+const LOGIN_OUT = ['U0000']
+const ERROR = ['E0000']
+export { SUCCESS, ABNORMAL, ERROR, LOGIN_OUT }
