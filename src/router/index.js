@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: asyncImport('components/HelloWorld')
+      name: 'home',
+      component: asyncImport('components/home')
     }
   ]
 })

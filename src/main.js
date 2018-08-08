@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import '../src/util/rem'
+// import 'lib-flexible/flexible'
 import FastClick from 'fastclick'
 
 if ('addEventListener' in document) {
