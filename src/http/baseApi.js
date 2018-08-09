@@ -1,9 +1,15 @@
-import axios from 'axios' // 注意先安装哦
-import config from './config.js' // 倒入默认配置
-import qs from 'qs' // 序列化请求数据，视服务端的要求
-import { Toast } from 'vant'// vant ui 框架
+import axios from 'axios'
+import config from './config.js'
+import qs from 'qs'
+import { Toast } from 'vant'
 // import router from '@/router' // 路由
 
+/**
+ *
+ *
+ * @param {*} options
+ * @returns
+ */
 const Axios = function (options) {
   return new Promise((resolve, reject) => {
     const _axios = axios.create({
@@ -15,14 +21,14 @@ const Axios = function (options) {
     }
     )
 
-    // request 拦截器
+    // request 拦截器
     _axios.interceptors.request.use(
       config => {
         // Tip: 1
-        // 请求开始的时候可以结合 vuex 开启全屏的 loading 动画
+        // vuex 开启全屏的 loading 动画
 
         // Tip: 2
-        // 带上 token , 可以结合 vuex 或者重 localStorage
+        // 带上 token , 可以结合 vuex ,localStorage , cookies
         // if (store.getters.token) {
         //     config.headers['X-Token'] = getToken() // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
         // } else {
