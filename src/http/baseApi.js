@@ -13,7 +13,7 @@ import { Toast } from 'vant'
 const Axios = function (options) {
   return new Promise((resolve, reject) => {
     const _axios = axios.create({
-      baseURL: config.baseURL, // 因为我本地做了反向代理
+      baseURL: config.baseURL, // 请求地址
       timeout: config.timeout, // 设置超时时间
       responseType: config.responseType, // 返回数据类型
       withCredentials: config.withCredentials, // 是否允许带cookie这些
@@ -37,9 +37,7 @@ const Axios = function (options) {
 
         // Tip: 3
         // 根据请求方法，序列化传来的参数，根据后端需求是否序列化
-        if (config.method.toLocaleLowerCase() === 'post' ||
-          config.method.toLocaleLowerCase() === 'put' ||
-          config.method.toLocaleLowerCase() === 'delete') {
+        if (config.method.toLocaleLowerCase() === 'post' || config.method.toLocaleLowerCase() === 'put' || config.method.toLocaleLowerCase() === 'delete') {
           config.data = qs.stringify(config.data)
         }
         return config
@@ -149,7 +147,7 @@ const Axios = function (options) {
         }
         console.error(err)
         showToast(err)
-        // 此处我使用的是 element UI 的提示组件
+        // 此处我使用的是 element UI 的提示组件
         // Message.error(`ERROR: ${err}`);
         return Promise.reject(err) // 返回接口返回的错误信息
       }
@@ -167,7 +165,18 @@ const Axios = function (options) {
   })
 }
 
-const showToast = function (message, type = 'text', mask = 'false', forbidClick = 'false', loadingType = 'circular', duration = '3000') {
+/**
+ *
+ *
+ * @param {*} message 提示内容
+ * @param {string} [type='text'] 提示类型:loading,success,fail,clear
+ * @param {string} [mask='false'] 是否显示背景蒙层
+ * @param {string} [forbidClick='false'] 是否禁止背景点击
+ * @param {string} [loadingType='circular'] 加载图标类型, 可选值为 spinner
+ * @param {string} [duration='3000'] 展示时长(ms)，值为 0 时，toast 不会消失
+ */
+
+const showToast = (message, type = 'text', mask = 'false', forbidClick = 'false', loadingType = 'circular', duration = '3000') => {
   Toast[type]({
     message, // 内容
     mask, // 蒙层
