@@ -1,0 +1,20 @@
+  @font-face {
+    font-family: 'custom-iconfont';  /* project id 792380 */
+    src:url('//at.alicdn.com/t/font_792380_4y3bvbirxp6.ttf') format('truetype');
+  }
+  .van-icon {
+    font-family: 'vant-icon', 'custom-iconfont' !important;
+  }
+
+  .van-icon-mark:before {
+    content: '\e7a8';
+  }
+  .van-icon-sorts:before {
+    content: '\e652';
+  }
+  .van-icon-shopCart:before {
+    content: '\e606';
+  }
+  .van-icon-my:before {
+    content: '\ea5b';
+  }

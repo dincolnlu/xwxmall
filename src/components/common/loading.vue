@@ -34,33 +34,26 @@ export default {
   .loading-items-box {
     @include center;
     @include wh(200px);
-    // .item-one {
-    //   @include center;
-    //   @include wh(50px);
-    // }
-    // .item-two {
-    //   @include center;
-    //   @include wh(70px);
-    //   animation-delay: 0.1s;
-    // }
-    // .item-three {
-    //   @include center;
-    //   @include wh(90px);
-    //   animation-delay: 0.2s;
-    // }
-    // .item-four {
-    //   @include center;
-    //   @include wh(110px);
-    //   animation-delay: 0.3s;
-    // }
-
-  }
-  @each $member in one, two, three, four {
-    .item-#{$member} {
+    .item-one {
       @include center;
-      @include wh(50px+#{$i*20px});
+      @include wh(50px);
+    }
+    .item-two {
+      @include center;
+      @include wh(70px);
+      animation-delay: 0.1s;
+    }
+    .item-three {
+      @include center;
+      @include wh(90px);
       animation-delay: 0.2s;
     }
+    .item-four {
+      @include center;
+      @include wh(110px);
+      animation-delay: 0.3s;
+    }
+
   }
 
   .item {
