@@ -1,3 +1,9 @@
+/*
+ * @Author: dincoln
+ * @Date: 2018-08-15 16:00:20
+ * @Last Modified by:   dincoln
+ * @Last Modified time: 2018-08-15 16:00:20
+ */
 <template>
 <div class="loading_container">
   <div class="loading-items-box">
@@ -30,7 +36,6 @@ export default {
 
 <style lang="scss" scoped>
   @import '../../style/mixin.scss';
-
   .loading-items-box {
     @include center;
     @include wh(200px);
@@ -59,8 +64,8 @@ export default {
   .item {
     border-radius: 50%;
     position: absolute;
-    border-left: 5px solid $blue;
-    border-right: 5px solid $blue;
+    border-left: 5px solid $color-primary;
+    border-right: 5px solid $color-primary;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     animation: animate 2s infinite;

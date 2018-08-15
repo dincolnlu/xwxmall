@@ -11,7 +11,7 @@ module.exports = {
     "autoprefixer": {},
     'postcss-pxtorem': {
       rootValue: 20,
-      propList: ['*', '!border', '!border*'],
+      propList: ['*', '!border', '!border*', '!box*'],
       
     }
   }

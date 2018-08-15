@@ -1,30 +1,47 @@
 <template>
-  <div class="foot-bar">
-    <!-- <van-tabbar v-model="active">
-      <van-tabbar-item icon="shop">标签</van-tabbar-item>
-      <van-tabbar-item icon="chat" dot>标签</van-tabbar-item>
-      <van-tabbar-item icon="records" info="5">标签</van-tabbar-item>
-      <van-tabbar-item icon="gold-coin" info="20">标签</van-tabbar-item>
-    </van-tabbar> -->
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="mark">商城</van-tabbar-item>
-      <van-tabbar-item icon="sorts">分类</van-tabbar-item>
-      <van-tabbar-item icon="shopCart">购物车</van-tabbar-item>
-      <van-tabbar-item icon="my">我的</van-tabbar-item>
-    </van-tabbar>
+  <div>
+    <x-footer-box v-model="select">
+      <x-footer-item id='tab1'>
+        <svg-icon class-name="foot" slot="icon" icon-class="store"></svg-icon>
+        商城
+      </x-footer-item>
+      <x-footer-item id='tab2'>
+        <svg-icon class-name="foot" slot="icon" icon-class="viewGallery"></svg-icon>
+        分类
+      </x-footer-item>
+      <x-footer-item id='tab3'>
+        <svg-icon class-name="foot" slot="icon" icon-class="cart"></svg-icon>
+        购物车
+      </x-footer-item>
+      <x-footer-item id='tab4'>
+        <svg-icon class-name="foot" slot="icon" icon-class="account"></svg-icon>
+        我
+      </x-footer-item>
+    </x-footer-box>
   </div>
 </template>
+
 <script>
-import Vue from 'vue'
-import { Tabbar, TabbarItem } from 'vant'
-
-Vue.use(Tabbar).use(TabbarItem)
-
+import xFooterBox from './footerBox'
+import xFooterItem from './footerItem'
 export default {
+  name: 'footerBar',
   data () {
     return {
-      active: 0
+      select: 'tab1'
     }
+  },
+  components: {
+    xFooterBox,
+    xFooterItem
   }
 }
 </script>
+<style lang="scss">
+  @import '../../style/mixin.scss';
+  .svg-icon-foot {
+    @include wh(19px,19px);
+    fill: currentColor;
+    overflow: hidden;
+  }
+</style>

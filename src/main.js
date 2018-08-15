@@ -6,9 +6,14 @@ import router from './router'
 import '../src/util/rem'
 // import 'lib-flexible/flexible'
 import FastClick from 'fastclick'
-// layouts模板页
-import Default from './layouts/default.vue'
-import NoSideBar from './layouts/noSideBar.vue'
+
+// 引入svg组件
+
+// 全局注册icon-svg
+import '@/icons'
+
+// 全局注册layouts插件
+import '@/layouts'
 
 // 处理移动端click事件300毫秒延迟
 if ('addEventListener' in document) {
@@ -22,9 +27,6 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 
-Vue.component('default-layout', Default)
-Vue.component('no-sideBar-layout', NoSideBar)
-
 new Vue({
   el: '#app',
   router,
@@ -33,13 +35,3 @@ new Vue({
   },
   template: '<App/>'
 })
-
-// Vue.component('default-layout', Default)
-// Vue.component('no-sideBar-layout', NoSideBar)
-
-// Vue.config.productionTip = false
-
-// new Vue({
-//   router,
-//   render: h => h(App)
-// }).$mount('#app')

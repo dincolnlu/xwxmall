@@ -1,6 +1,4 @@
-$blue: #ff4930;  //theme颜色
-$bc: #fff; //背景颜色
-$fc:#666; //默认字体颜色
+@import './theme.scss';
 
 // 背景图片地址和大小
 @mixin bis($url) { 
@@ -67,4 +65,8 @@ $fc:#666; //默认字体颜色
 	display: flex;
 	justify-content: $type;
 
+}
+//阴影 例子:@include box-emboss(0.8, 0.05);
+@mixin box-emboss($opacity, $opacity2) {
+	box-shadow: white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
 }

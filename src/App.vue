@@ -1,3 +1,9 @@
+/*
+ * @Author: dincoln
+ * @Date: 2018-08-15 16:00:15
+ * @Last Modified by: dincoln
+ * @Last Modified time: 2018-08-15 16:49:56
+ */
 <template>
   <div id="app">
     <component :is="layout">
@@ -24,14 +30,14 @@ export default {
     }
   },
   created () {
-    console.log(this.$route, this.$route.meta.layout)
+    // console.log(this.$route, this.$route.meta.layout)
   },
   updated () {
-    console.log(this.$route, this.$route.meta.layout)
+    // console.log(this.$route, this.$route.meta.layout)
   }
 }
 </script>
 
 <style lang='scss'>
- @import url('./style/font-icons.scss');
+@import './style/reset.scss';
 </style>
