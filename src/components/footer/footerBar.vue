@@ -1,40 +1,39 @@
 <template>
   <div>
-    <x-footer-box v-model="select">
-      <x-footer-item id='tab1'>
-        <svg-icon class-name="foot" slot="icon" icon-class="store"></svg-icon>
-        商城
-      </x-footer-item>
-      <x-footer-item id='tab2'>
-        <svg-icon class-name="foot" slot="icon" icon-class="viewGallery"></svg-icon>
-        分类
-      </x-footer-item>
-      <x-footer-item id='tab3'>
-        <svg-icon class-name="foot" slot="icon" icon-class="cart"></svg-icon>
-        购物车
-      </x-footer-item>
-      <x-footer-item id='tab4'>
-        <svg-icon class-name="foot" slot="icon" icon-class="account"></svg-icon>
-        我
-      </x-footer-item>
-    </x-footer-box>
+    <div class="x-footer">
+      <router-link class="x-footer-item" :to="{name:'shop'}" exact>
+        <span class="x-footer-item-icon">
+          <svg-icon class-name="foot" icon-class="store"></svg-icon>
+        </span>
+        <span class="x-footer-item-text">商城</span>
+      </router-link>
+
+      <router-link class="x-footer-item" :to="{name:'sort'}">
+        <span class="x-footer-item-icon">
+          <svg-icon class-name="foot" icon-class="viewGallery"></svg-icon>
+        </span>
+        <span class="x-footer-item-text">分类</span>
+      </router-link>
+
+      <router-link class="x-footer-item" :to="{name:'cart'}">
+        <span class="x-footer-item-icon">
+          <svg-icon class-name="foot" icon-class="cart"></svg-icon>
+        </span>
+          <span class="x-footer-item-text">购物车</span>
+      </router-link>
+      <router-link class="x-footer-item" :to="{name:'personalCenter'}">
+        <span class="x-footer-item-icon">
+          <svg-icon class-name="foot" icon-class="account"></svg-icon>
+         </span>
+          <span class="x-footer-item-text">我</span>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-import xFooterBox from './footerBox'
-import xFooterItem from './footerItem'
 export default {
-  name: 'footerBar',
-  data () {
-    return {
-      select: 'tab1'
-    }
-  },
-  components: {
-    xFooterBox,
-    xFooterItem
-  }
+  name: 'footerBar'
 }
 </script>
 <style lang="scss">
@@ -44,4 +43,36 @@ export default {
     fill: currentColor;
     overflow: hidden;
   }
+  .x-footer{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    @include wh(100%,50px);
+    background: $color-maincolor;
+    border-top: 1px solid $color-border-regular;
+    box-shadow: 0px -1px 3px 0px $color-border-regular;
+    .router-link-active ,.router-link-exact-active{
+      .svg-icon-foot{
+        color:$color-text-link-hover
+      }
+    }
+  }
+  .x-footer-item{
+  flex: 1;
+  text-align: center;
+  .x-footer-item-icon{
+    display: block;
+    padding-top: 6px;
+  }
+  .x-footer-item-text{
+    display: block;
+    font-size: 8px;
+    margin-top: -3px;
+    color:$color-text-regular;
+  }
+}
 </style>

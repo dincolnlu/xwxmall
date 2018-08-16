@@ -1,4 +1,4 @@
-const home = require('./home.vue')
+const home = require('./home.vue').default
 
 const routes = [
   {

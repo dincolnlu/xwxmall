@@ -15,7 +15,7 @@ Vue.use(Router)
 //   routes.push(...ele)
 // })
 
-const routes = (r => {
+const routesURL = (r => {
   const k = []
   r.keys().map(key => k.push(...r(key).default))
   return k
@@ -25,5 +25,12 @@ const routes = (r => {
 
 export default new Router({
   mode: 'history',
-  routes
+  routes: [
+    { path: '/',
+      redirect: '/shop',
+      children: []
+    },
+    ...routesURL
+
+  ]
 })

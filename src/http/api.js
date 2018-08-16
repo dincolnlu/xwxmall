@@ -16,9 +16,9 @@ class Api {
       //   // }
       // })
     } catch (err) {
-      alert('服务器出错')
+      alert('服务器出错1')
       console.log(err)
-      showToast('服务器出错')
+      showToast('服务器出错1')
     }
   }
   async post (url, data) {

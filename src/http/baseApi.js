@@ -176,14 +176,24 @@ const Axios = function (options) {
  * @param {string} [duration='3000'] 展示时长(ms)，值为 0 时，toast 不会消失
  */
 
-const showToast = (message, type = 'text', mask = 'false', forbidClick = 'false', loadingType = 'circular', duration = '3000') => {
-  Toast[type]({
-    message, // 内容
-    mask, // 蒙层
-    forbidClick, // 禁止背景
-    loadingType, // 加载图标类型
-    duration // 展示时长(ms)
-  })
+const showToast = (message, type, mask = false, forbidClick = false, loadingType = 'circular', duration = '3000') => {
+  if (type) {
+    Toast[type]({
+      message, // 内容
+      mask, // 蒙层
+      forbidClick, // 禁止背景
+      loadingType, // 加载图标类型
+      duration // 展示时长(ms)
+    })
+  } else {
+    Toast({
+      message, // 内容
+      mask, // 蒙层
+      forbidClick, // 禁止背景
+      loadingType, // 加载图标类型
+      duration // 展示时长(ms)
+    })
+  }
 }
 
 export {Axios, showToast}

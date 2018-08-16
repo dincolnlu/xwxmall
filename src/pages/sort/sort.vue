@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>商城首页</p>
+      <p>分类</p>
   </div>
 </template>
 

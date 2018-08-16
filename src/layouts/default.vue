@@ -1,15 +1,18 @@
 <template>
   <div>
+    <div class="container">
+      <slot/>
+    </div>
     <footer-bar />
   </div>
 </template>
 
 <script>
 
-import FooterBar from '@/components/footer/FooterBar'
+import footerBar from '@/components/footer/footerBar'
 export default {
   components: {
-    FooterBar
+    footerBar
   }
 }
 </script>

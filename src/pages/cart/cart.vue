@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <slot/>
-  </div>
+    <p>购物车</p>
 </template>
 
 <script>
