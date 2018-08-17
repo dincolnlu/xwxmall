@@ -21,7 +21,7 @@
         </span>
           <span class="x-footer-item-text">购物车</span>
       </router-link>
-      <router-link class="x-footer-item" :to="{name:'personalCenter'}">
+      <router-link class="x-footer-item" :to="{name:'my-center'}">
         <span class="x-footer-item-icon">
           <svg-icon class-name="foot" icon-class="account"></svg-icon>
          </span>
@@ -42,6 +42,7 @@ export default {
     @include wh(19px,19px);
     fill: currentColor;
     overflow: hidden;
+    color:$color-text-regular
   }
   .x-footer{
     display: flex;

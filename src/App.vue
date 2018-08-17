@@ -2,7 +2,7 @@
  * @Author: dincoln
  * @Date: 2018-08-15 16:00:15
  * @Last Modified by: dincoln
- * @Last Modified time: 2018-08-15 16:49:56
+ * @Last Modified time: 2018-08-17 17:01:03
  */
 <template>
   <div id="app">
@@ -15,7 +15,10 @@
 
 <script>
 // 全局loading
+
 import loading from '@/components/common/loading'
+
+// import { mapState } from 'vuex'
 
 const defaultLayout = 'default'
 

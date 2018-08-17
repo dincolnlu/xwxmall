@@ -1,3 +1,4 @@
+export const LOADING_PLUS = 'LOADING_PLUS'
 export const RECORD_ADDRESS = 'RECORD_ADDRESS'
 export const ADD_CART = 'ADD_CART'
 export const REDUCE_CART = 'REDUCE_CART'

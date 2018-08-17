@@ -1,3 +1,9 @@
+/*
+ * @Author: dincoln
+ * @Date: 2018-08-17 15:07:14
+ * @Last Modified by:   dincoln
+ * @Last Modified time: 2018-08-17 15:07:14
+ */
 <template>
   <div>
       <p @click="getName">{{name}}</p>
@@ -5,9 +11,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import api from '../../http/index.js'
-Vue.use(api)
 
 export default {
   data () {
@@ -17,7 +20,7 @@ export default {
   },
   methods: {
     getName () {
-      console.log(this.$api)
+      console.log(this.$api.post('/xwx/userInfo'))
     }
   },
   computed: {

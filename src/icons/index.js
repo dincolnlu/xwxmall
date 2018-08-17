@@ -2,12 +2,12 @@
  * @Author: dincoln
  * @Date: 2018-08-15 15:59:52
  * @Last Modified by: dincoln
- * @Last Modified time: 2018-08-15 16:33:17
+ * @Last Modified time: 2018-08-17 10:30:11
  */
 
 import Vue from 'vue'
 // 引入svg组件
-import SvgIcon from '@/components/common/svgIcons'
+import SvgIcon from '@/components/common/svg-icons'
 
 Vue.component('svg-icon', SvgIcon)
 

@@ -1,17 +1,13 @@
 /*
  * @Author: dincoln
- * @Date: 2018-08-15 16:00:20
- * @Last Modified by:   dincoln
- * @Last Modified time: 2018-08-15 16:00:20
+ * @Date: 2018-08-17 15:02:11
+ * @Last Modified by: dincoln
+ * @Last Modified time: 2018-08-17 15:16:49
  */
+
 <template>
 <div class="loading_container">
-  <div class="loading-items-box">
-    <div class="item item-four"></div>
-    <div class="item item-three"></div>
-    <div class="item item-two"></div>
-    <div class="item item-one"></div>
-  </div>
+  <svg-icon  class-name="loading" icon-class="loading-bar"></svg-icon>
 </div>
 </template>
 
@@ -19,64 +15,22 @@
 export default {
   data () {
     return {
-      positionY: 0,
-      timer: null
+      loading: 0
     }
-  },
-  mounted () {
-    this.timer = setInterval(() => {
-      this.positionY++
-    }, 600)
-  },
-  beforeDestroy () {
-    clearInterval(this.timer)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  @import '../../style/mixin.scss';
-  .loading-items-box {
-    @include center;
-    @include wh(200px);
-    .item-one {
-      @include center;
-      @include wh(50px);
-    }
-    .item-two {
-      @include center;
-      @include wh(70px);
-      animation-delay: 0.1s;
-    }
-    .item-three {
-      @include center;
-      @include wh(90px);
-      animation-delay: 0.2s;
-    }
-    .item-four {
-      @include center;
-      @include wh(110px);
-      animation-delay: 0.3s;
-    }
-
+@import '../../style/mixin.scss';
+.loading_container{
+  @include center;
+  .svg-icon-loading{
+    @include wh(30px,30px);
+    fill: currentColor;
+    overflow: hidden;
+    color:$color-primary
   }
-
-  .item {
-    border-radius: 50%;
-    position: absolute;
-    border-left: 5px solid $color-primary;
-    border-right: 5px solid $color-primary;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    animation: animate 2s infinite;
-  }
-  @keyframes animate{
-    50% {
-      transform: translate(-50%, -50%) rotate(-180deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-  }
+}
 
 </style>

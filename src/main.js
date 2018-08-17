@@ -15,6 +15,9 @@ import '@/icons'
 // 全局注册layouts插件
 import '@/layouts'
 
+// 导入封装axios插件
+import axiosPlugin from './http/baseApi'
+
 // 处理移动端click事件300毫秒延迟
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function () {
@@ -24,6 +27,9 @@ if ('addEventListener' in document) {
 
 // 生成模板错误提示
 Vue.config.productionTip = false
+
+// 使用封装axios插件
+Vue.use(axiosPlugin)
 
 /* eslint-disable no-new */
 

@@ -27,17 +27,19 @@ import {
   SAVE_ADDDETAIL,
   SAVE_QUESTION,
   ADD_ADDRESS,
-  BUY_CART
+  BUY_CART,
+  LOADING_PLUS
 } from './mutation-types.js'
 
 import { setStore, getStore } from '../util/mUtils'
 
 export default {
+  // 加载组件
+  [LOADING_PLUS] (state, isLoading) {
+    state.isLoading = isLoading
+  },
   // 记录当前经度纬度
-  [RECORD_ADDRESS] (state, {
-    latitude,
-    longitude
-  }) {
+  [RECORD_ADDRESS] (state, {latitude, longitude}) {
     state.latitude = latitude
     state.longitude = longitude
   },
@@ -46,18 +48,7 @@ export default {
     state.shopDetail = detail
   },
   // 加入购物车
-  [ADD_CART] (state, {
-    shopid,
-    categoryId,
-    itemId,
-    foodId,
-    name,
-    price,
-    specs,
-    packingFee,
-    skuId,
-    stock
-  }) {
+  [ADD_CART] (state, {shopid, categoryId, itemId, foodId, name, price, specs, packingFee, skuId, stock}) {
     let cart = state.cartList
     let shop = cart[shopid] = (cart[shopid] || {})
     let category = shop[categoryId] = (shop[categoryId] || {})
@@ -81,15 +72,7 @@ export default {
     setStore('buyCart', state.cartList)
   },
   // 移出购物车
-  [REDUCE_CART] (state, {
-    shopid,
-    categoryId,
-    itemId,
-    foodId,
-    name,
-    price,
-    specs
-  }) {
+  [REDUCE_CART] (state, {shopid, categoryId, itemId, foodId, name, price, specs}) {
     let cart = state.cartList
     let shop = (cart[shopid] || {})
     let category = (shop[categoryId] || {})
@@ -148,10 +131,7 @@ export default {
     state.shopid = shopid
   },
   // 记录订单页面用户选择的备注, 传递给订单确认页面
-  [CONFIRM_REMARK] (state, {
-    remarkText,
-    inputText
-  }) {
+  [CONFIRM_REMARK] (state, {remarkText, inputText}) {
     state.remarkText = remarkText
     state.inputText = inputText
   },
@@ -172,10 +152,7 @@ export default {
     state.newAddress.push(newAddress)
   },
   // 选择的地址
-  [CHOOSE_ADDRESS] (state, {
-    address,
-    index
-  }) {
+  [CHOOSE_ADDRESS] (state, {address, index}) {
     state.choosedAddress = address
     state.addressIndex = index
   },
@@ -184,10 +161,7 @@ export default {
     state.needValidation = needValidation
   },
   // 保存下单后购物id 和 sig
-  [SAVE_CART_ID_SIG] (state, {
-    cartId,
-    sig
-  }) {
+  [SAVE_CART_ID_SIG] (state, {cartId, sig}) {
     state.cartId = cartId
     state.sig = sig
   },

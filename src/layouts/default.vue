@@ -9,7 +9,7 @@
 
 <script>
 
-import footerBar from '@/components/footer/footerBar'
+import footerBar from '@/components/footer/footer-bar'
 export default {
   components: {
     footerBar
