@@ -4,10 +4,11 @@ import mutations from './mutations'
 import actions from './action'
 import getters from './getters'
 
+import loading from './modules/loading'
+
 Vue.use(Vuex)
 
 const state = {
-  isLoading: false, // 加载组件
   cartList: {}, // 加入购物车的商品列表
   shopDetail: null, // 商家详情信息
   userInfo: null, // 用户信息
@@ -34,6 +35,9 @@ const state = {
 }
 
 export default new Vuex.Store({
+  modules: {
+    loading: loading
+  },
   state,
   getters,
   actions,

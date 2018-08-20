@@ -2,7 +2,7 @@
  * @Author: dincoln
  * @Date: 2018-08-15 15:59:57
  * @Last Modified by: dincoln
- * @Last Modified time: 2018-08-15 16:16:28
+ * @Last Modified time: 2018-08-20 14:06:00
  */
 <template>
     <svg :class="svgClass" aria-hidden="true">
@@ -14,8 +14,7 @@ export default{
   name: 'svg-icon',
   props: {
     iconClass: {
-      type: String,
-      required: true
+      type: String
     },
     className: {
       type: String

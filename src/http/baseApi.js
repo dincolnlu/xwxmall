@@ -2,7 +2,7 @@
  * @Author: dincoln
  * @Date: 2018-08-17 15:07:39
  * @Last Modified by: dincoln
- * @Last Modified time: 2018-08-17 17:00:17
+ * @Last Modified time: 2018-08-20 18:44:57
  */
 import Vue from 'vue'
 import axios from 'axios'
@@ -10,6 +10,8 @@ import config from './config.js'
 import qs from 'qs'
 import { Toast } from 'vant'
 import vueAxios from 'vue-axios'
+import {LOADING_PLUS} from '../store/modules/loading/mutation-types'
+import store from '../store'
 
 Vue.use(vueAxios, axios)
 
@@ -35,6 +37,7 @@ _axios.interceptors.request.use(
   config => {
     // Tip: 1
     // vuex 开启全屏的 loading 动画
+    store.commit(LOADING_PLUS, true)
 
     // Tip: 2
     // 带上 token , 可以结合 vuex ,localStorage , cookies
@@ -82,6 +85,7 @@ _axios.interceptors.request.use(
 // response 拦截器
 _axios.interceptors.response.use(
   response => {
+    // store.commit(LOADING_PLUS, false)
     let data
     // IE9时response.data是undefined，因此需要使用response.request.responseText(Stringify后的字符串)
     if (response.data === undefined) {

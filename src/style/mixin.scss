@@ -36,11 +36,20 @@
     transform: translateY(-50%);
 }
 
-//定位上下居中
+//定位左右居中
 @mixin cl {  
 	position: absolute;
 	left: 50%;
     transform: translateX(-50%);
+}
+
+//自定义定位
+@mixin absoulute ($top,$left,$bottom,$right){  
+	position: absolute;
+	top: $top;
+	left:$left;
+	bottom:$bottom;
+	right:$right;
 }
 
 //宽高
